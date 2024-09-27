@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ServerFormController">
+	<children>
+		<Pane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #6b4ad6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<children>
+				<HBox alignment="CENTER" prefHeight="150.0" prefWidth="350.0">
+					<children>
+						<ImageView fx:id="logo" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../../../images/IMG_0643.png" />
+							</image>
+						</ImageView>
+						<Label text="CEMS" textFill="WHITE">
+							<font>
+								<Font name="Arial Rounded MT Bold" size="50.0" />
+							</font>
+						</Label>
+					</children>
+				</HBox>
+				<Line endX="350.0" endY="150.0" startY="150.0" stroke="WHITESMOKE" strokeWidth="2.0" />
+				<Label layoutX="20.0" layoutY="182.0" text="IP Address" textFill="WHITE">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="15.0" />
+					</font>
+				</Label>
+				<TextField fx:id="ipAddressTextField" focusTraversable="false" layoutX="140.0" layoutY="175.0" prefHeight="30.0" prefWidth="180.0" promptText="IP Address" style="-fx-background-color:  transparent; -fx-border-color: #ffffff; -fx-border-radius: 2em; -fx-Text-fill: #f5f5f5;">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="14.0" />
+					</font>
+				</TextField>
+				<Label layoutX="20.0" layoutY="232.0" text="Port" textFill="WHITE">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="15.0" />
+					</font>
+				</Label>
+				<TextField fx:id="PortTextField" focusTraversable="false" layoutX="140.0" layoutY="225.0" prefHeight="30.0" prefWidth="180.0" promptText="Port" style="-fx-background-color:  transparent; -fx-border-color: #ffffff; -fx-border-radius: 2em; -fx-Text-fill: #f5f5f5;">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="14.0" />
+					</font>
+				</TextField>
+				<Label layoutX="20.0" layoutY="282.0" text="DB name" textFill="WHITE">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="15.0" />
+					</font>
+				</Label>
+				<TextField fx:id="dbNameTextField" focusTraversable="false" layoutX="140.0" layoutY="275.0" prefHeight="30.0" prefWidth="180.0" promptText="DB name" style="-fx-background-color:  transparent; -fx-border-color: #ffffff; -fx-border-radius: 2em; -fx-Text-fill: #f5f5f5;">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="14.0" />
+					</font>
+				</TextField>
+				<Label layoutX="20.0" layoutY="332.0" text="DB user name" textFill="WHITE">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="15.0" />
+					</font>
+				</Label>
+				<TextField fx:id="dbUsernameTextField" focusTraversable="false" layoutX="140.0" layoutY="325.0" prefHeight="30.0" prefWidth="180.0" promptText="DB user name" style="-fx-background-color:  transparent; -fx-border-color: #ffffff; -fx-border-radius: 2em; -fx-Text-fill: #f5f5f5;">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="14.0" />
+					</font>
+				</TextField>
+				<Label layoutX="20.0" layoutY="382.0" text="DB password" textFill="WHITE">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="15.0" />
+					</font>
+				</Label>
+				<PasswordField fx:id="dbPasswordTextField" layoutX="140.0" layoutY="375.0" prefHeight="30.0" prefWidth="180.0" promptText="DB password" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 2em; -fx-Text-fill: #f5f5f5;">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="14.0" />
+					</font>
+				</PasswordField>
+				<Button fx:id="btnStartServer" layoutX="100.0" layoutY="450.0" mnemonicParsing="false" onAction="#startServerButton" prefHeight="30.0" prefWidth="150.0" stylesheets="@style.css" text="Start Server">
+					<font>
+						<Font name="Arial Rounded MT Bold" size="14.0" />
+					</font>
+				</Button>
+				<Button fx:id="btnExit" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutY="550.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="42.0" prefWidth="200.0" stylesheets="@style.css" text="Exit">
+					<graphic>
+						<ImageView fx:id="imgBtnExit" fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../../../images/Exit_32.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<padding>
+						<Insets left="50.0" />
+					</padding>
+					<font>
+						<Font name="Arial Rounded MT Bold" size="15.0" />
+					</font>
+				</Button>
+			</children>
+			<effect>
+				<DropShadow color="#6b4ad6" radius="17.25" width="50.0" />
+			</effect>
+		</Pane>
+		<Label layoutX="400.0" layoutY="21.0" text="CEMS Server" textFill="#6b4ad6">
+			<font>
+				<Font name="Arial Rounded MT Bold" size="40.0" />
+			</font>
+		</Label>
+		<TableView fx:id="ClientsTableView" fixedCellSize="0.0" layoutX="400.0" layoutY="118.0" prefHeight="381.0" prefWidth="700.0" stylesheets="@style.css" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="118.0">
+			<columns>
+				<TableColumn fx:id="ipColumn" prefWidth="244.0" text="IP" />
+				<TableColumn fx:id="hostNameColumn" prefWidth="244.0" text="Host" />
+				<TableColumn fx:id="statusColumn" prefWidth="103.0" text="Status" />
+				<TableColumn fx:id="loggedInAsColumn" prefWidth="103.0" text="Logged In As" />
+			</columns>
+		</TableView>
+		<Button fx:id="btnServerLog" layoutX="400.0" layoutY="522.0" mnemonicParsing="false" onAction="#handleServerLogbtnClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@style.css" text="Server Log" textFill="WHITE">
+			<font>
+				<Font name="Arial Rounded MT Bold" size="14.0" />
+			</font>
+		</Button>
+		<Button fx:id="btnCleanDisconecteds" layoutX="900.0" layoutY="522.0" mnemonicParsing="false" onAction="#cleanDisconnectedUsers" prefHeight="35.0" prefWidth="200.0" stylesheets="@style.css" text="Clean Disconectd Clients" textFill="WHITE">
+			<font>
+				<Font name="Arial Rounded MT Bold" size="14.0" />
+			</font>
+		</Button>
+		<Label layoutX="400.0" layoutY="79.0" text="Server Status: " textFill="#838383">
+			<font>
+				<Font name="Arial Rounded MT Bold" size="20.0" />
+			</font>
+		</Label>
+		<Label fx:id="serverStatus" layoutX="545.0" layoutY="79.0" text="Status Label" textFill="#838383">
+			<font>
+				<Font name="Arial Rounded MT Bold" size="20.0" />
+			</font>
+		</Label>
+      <TextArea fx:id="logTextArea" editable="false" layoutX="400.0" layoutY="319.0" prefHeight="180.0" prefWidth="700.0" stylesheets="@style.css" text="">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="btnImportUsersData" layoutX="650.0" layoutY="522.0" mnemonicParsing="false" onAction="#handleImportBtnClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@style.css" text="Import Users Data" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+	</children>
+	<effect>
+		<DropShadow color="#1b1eeb" />
+	</effect>
+</AnchorPane>

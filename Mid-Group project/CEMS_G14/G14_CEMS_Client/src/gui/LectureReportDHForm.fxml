@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportLectureDHController">
+   <children>
+      <StackPane layoutX="258.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #02030A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="HistogramPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f5f5f5;">
+               <children>
+                  <Label layoutX="185.0" layoutY="26.0" text="Lecturer Exam Report" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="BackToReportPaneButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutY="544.0" mnemonicParsing="false" onAction="#handleBackToReportListClicked" prefHeight="42.0" prefWidth="200.0" stylesheets="@style.css" text="back">
+                     <graphic>
+                        <ImageView fx:id="imageBack" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../G14_CEMS_Server/src/images/Exit_32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <BarChart fx:id="barChart" layoutX="39.0" layoutY="100.0" prefHeight="400.0" prefWidth="721.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+               </children>
+            </Pane>
+            <Pane fx:id="LecturerReportPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f5f5f5;">
+               <children>
+                  <Label layoutX="244.0" layoutY="25.0" text="Lecturer Report" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="LecReportTableView" layoutX="32.0" layoutY="153.0" prefHeight="392.0" prefWidth="736.0">
+                    <columns>
+                      <TableColumn fx:id="LecExamIdClm" prefWidth="87.99996948242188" text="Exam Id" />
+                      <TableColumn fx:id="LecCourseClm" prefWidth="137.60003662109375" text="Course" />
+                        <TableColumn fx:id="SubjectClm" prefWidth="128.79998779296875" text="Subject" />
+                        <TableColumn fx:id="TimeClm" prefWidth="99.20001220703125" text="Time" />
+                        <TableColumn fx:id="ExamDateClm" prefWidth="113.5999755859375" text="Exam Date" />
+                        <TableColumn fx:id="NoStudentClm" prefWidth="91.2000732421875" text="#Student " />
+                        <TableColumn fx:id="btnViewHistogram" prefWidth="75.0" text="Histogram" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="searchTextField" layoutX="567.0" layoutY="102.0" prefHeight="36.0" prefWidth="200.0" promptText="Search" style="-fx-background-color: transparent; -fx-border-color: #6b4ad6; -fx-border-radius: 20; -fx-text-fill: #6b4ad6;">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="imageSearch" fitHeight="25.0" fitWidth="25.0" layoutX="732.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Search_64.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #6b4ad6;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="350.0">
+               <children>
+                  <ImageView fx:id="imageLogo" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/IMG_0643.PNG" />
+                     </image>
+                  </ImageView>
+                  <Label text="CEMS" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Line endX="350.0" endY="150.0" startY="150.0" stroke="WHITESMOKE" strokeWidth="2.0" />
+            <Button fx:id="BackButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleBackButtonClicked" prefHeight="42.0" prefWidth="200.0" stylesheets="@style.css" text="Back" AnchorPane.leftAnchor="0.0">
+               <graphic>
+                  <ImageView fx:id="imageExit" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../G14_CEMS_Server/src/images/Exit_32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="165.0" text="First Name:" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lecFirstName" layoutX="144.0" layoutY="165.0" text="first name" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="245.0" text="Lecture ID:" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lecId" layoutX="144.0" layoutY="245.0" text="ID" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="205.0" text="Last Name:" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lecLastName" layoutX="144.0" layoutY="205.0" text="first name" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="avarageLabel" layoutX="13.0" layoutY="284.0" text="Average:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="highestGradeLabel" layoutX="13.0" layoutY="324.0" text="Highest Grade:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lowestGradeLabel" layoutX="13.0" layoutY="364.0" text="Lowest Grade:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="midGradeLabel" layoutX="13.0" layoutY="404.0" text="Median:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="numberOfStudentsLabel" layoutX="13.0" layoutY="444.0" text="Number of Students:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="avarage" layoutX="108.0" layoutY="284.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="highestGrade" layoutX="167.0" layoutY="324.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lowestGrade" layoutX="162.0" layoutY="364.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="midGrade" layoutX="98.0" layoutY="404.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="numberOfStudents" layoutX="220.0" layoutY="444.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="percentageFailLabel" layoutX="14.0" layoutY="482.0" text="Percentage Fail:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="percentageFail" layoutX="183.0" layoutY="482.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#6b4ad6" radius="17.25" width="50.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

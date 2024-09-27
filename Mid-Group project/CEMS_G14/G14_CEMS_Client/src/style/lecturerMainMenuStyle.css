@@ -1,0 +1,151 @@
+.button
+{
+	-fx-background-color : #6b4ad6;
+	-fx-text-fill : #e7e5e5;
+	-fx-background-radius : 5 5 5 5;
+}
+.button:hover{
+	-fx-background-color : #f5f5f5;
+	-fx-text-fill : #6b4ad6;
+	-fx-background-radius : 5 5 5 5;
+}
+.button:pressed
+{
+	-fx-background-color : #4828af;
+	-fx-background-radius : 5 5 5 5;
+}
+
+#btnExams,
+#btnQuestions,
+#btnReports,
+#btnCheckExams,
+#btnLogOut{
+	-fx-background-color : #f5f5f5;
+	-fx-background-radius: 10;
+	-fx-text-fill : #6b4ad6;
+}
+
+#btnExams:hover,
+#btnQuestions:hover,
+#btnReports:hover,
+#btnCheckExams:hover,
+#btnLogOut:hover{/*5833d1 */
+	-fx-background-color : #947de1;
+	-fx-background-radius: 10;
+	-fx-text-fill : #e7e5e5;
+}
+
+#btnExams:pressed,
+#btnQuestions:pressed,
+#btnReports:pressed,
+#btnCheckExams:pressed,
+#btnLogOut:pressed{
+	-fx-background-color : #4828af;
+	-fx-background-radius: 10;
+	-fx-text-fill : #e7e5e5;
+}
+ 
+#btnCreateNewExam,
+#btnViewExamsList{
+	-fx-background-color : #6b4ad6;
+	-fx-border-radius: 2em;
+	-fx-background-radius: 2em;
+	-fx-text-fill : #e7e5e5;
+}
+
+#btnCreateNewExam:hover,
+#btnViewExamsList:hover{
+	-fx-background-color : #5833d1;
+	-fx-text-fill : #e7e5e5;
+}
+
+#btnCreateNewExam:pressed,
+#btnViewExamsList:pressed{
+	-fx-background-color : #4828af;
+	-fx-text-fill : #e7e5e5;
+}
+
+#btnExit
+{
+	-fx-background-color : #6b4ad6;
+	-fx-text-fill : #e7e5e5;
+}
+#btnExit:hover{
+	-fx-background-color : #5833d1;
+	-fx-background-radius : 0 10 10 0;
+}
+#btnExit:pressed
+{
+	-fx-background-color : #4828af;
+	-fx-background-radius : 0 10 10 0;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-background-radius: 7px 7px 7px 7px;
+    -fx-border-color: #6b4ad6;
+    -fx-border-radius: 7px;
+}
+.table-view .table-column {
+  -fx-alignment: CENTER;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: #a38fe5;
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 5px 0 5px 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-row-cell:hover {
+    -fx-background-color: #93f9b911;
+    -fx-text-background-color: #f5f5f5;
+}
+.table-row-cell:odd {
+    -fx-background-color: #d1c7f2;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell:even {
+    -fx-background-color: #beafed;
+    -fx-background-insets: 0, 1 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .track-background{
+	-fx-background-color: #a38fe5;
+	-fx-background-insets: 0 1 0 0;
+	-fx-background-radius: 0 0 7px 0px;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+.table-view .virtual-flow .scroll-bar:vertical .thumb,
+.table-view .virtual-flow .scroll-bar:horizontal .thumb{
+    -fx-background-color:  #6b4ad6;
+}
+.table-row-cell:highlighted {
+    -fx-background-color: #81c483;
+    -fx-background-radius: 15px;
+}

@@ -1,0 +1,57 @@
+Subjects:
+01	Physics
+02	Mathmatics
+03	Biology
+04	Computer Science
+05	Mechanical Engineering
+Courses:
+01	Physics 101	01
+02	Advanced Calculus	02
+03	Introduction to Biology	03
+04	Programming Fundamentals	04
+05	Mechanical Design	05
+06	Quantum Mechanics	01
+07	Linear Algebra	02
+08	Genetics	03
+09	Data Structures	04
+10	Thermodynamics	05
+11	Astrophysics	01
+12	Probability Theory	02
+13	Cell Biology	03
+14	Algorithms	04
+15	Fluid Mechanics	05
+16	Electromagnetism	01
+17	Discrete Mathematics	02
+18	Ecology	03
+19	Database Systems	04
+20	Structural Analysis	05
+Users:
+principal1	password1	3	Lucas	Davis	SW	451452155	0
+principal2	password2	3	Sarah	Johnson	SW	417454185	0
+Safa Khier	123	1	Safa	Khier	SW	322829102	0
+Layan Amer	123	1	Layan	Amer	SW	323068700	0
+lecturer1	321	1	Nabie	Merie	SW	123456789	0
+lecturer2	123456	1	John	Smith	SW	554227482	0
+lecturer3	password	1	1	Sarah	Johnson	SW	123	0
+dbrown	abcdef	1	David	Brown	SW	918273645	0
+emilydavis	password123	1	Emily	Davis	SW	162534879	0
+mwilson	qwerty	1	Michael	Wilson	SW	735291846	0
+student1	password1	2	James	Moore	SW	986543210	0
+student2	password2	2	Sophia	Gonzalez	SW	415184154	0
+student3	password3	2	Emma	Davis	SW	564738291	0
+student4	password4	2	Adam	Wilson	SW	987654321	0
+Lecturer Courses:
+322829102	01
+322829102	02
+322829102	05
+322829102	08
+323068700	03
+323068700	04
+323068700	06
+323068700	09
+918273645	11
+918273645	12
+162534879	13
+735291846	14
+735291846	15
+735291846	16

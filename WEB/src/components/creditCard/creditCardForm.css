@@ -1,0 +1,223 @@
+/* Background circles start */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #4bc0c0, #2c3e50);
+}
+.circles {
+  position: absolute;
+  height: 270px;
+  width: 450px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.circle-1 {
+  height: 300px;
+  width: 300px;
+  top: 70px;
+  left: -70px;
+  opacity: 0.8;
+  animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
+  animation-iteration-count: infinite;
+  animation-name: float;
+  -webkit-animation-name: float;
+  animation-duration: 6s;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-delay: 3.5s;
+  animation-delay: 3.5s;
+  animation-direction: alternate;
+}
+
+.circle-2 {
+  height: 240px;
+  width: 240px;
+  bottom: 70px;
+  right: -70px;
+  opacity: 0.8;
+  animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
+  animation-iteration-count: infinite;
+  animation-name: float;
+  -webkit-animation-name: float;
+  animation-duration: 6s;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  animation-direction: alternate;
+}
+/* Background circles end */
+
+/* ANIMATIONS */
+@keyframes explode {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@keyframes float {
+  0% {
+    -webkit-transform: rotateX(0deg) translateY(0px);
+    -moz-transform: rotateX(0deg) translateY(0px);
+    -ms-transform: rotateX(0deg) translateY(0px);
+    -o-transform: rotateX(0deg) translateY(0px);
+    transform: rotateX(0deg) translateY(0px);
+  }
+
+  50% {
+    -webkit-transform: rotateX(0deg) translateY(1px) translateX(5px);
+    -moz-transform: rotateX(0deg) translateY(10px) translateX(5px);
+    -ms-transform: rotateX(0deg) translateY(30px) translateX(5px);
+    -o-transform: rotateX(0deg) translateY(40px) translateX(5px);
+    transform: rotateX(0deg) translateY(10px) translateX(5px);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg) translateY(0px) translateX(1px);
+    -moz-transform: rotateX(0deg) translateY(0px) translateX(1px);
+    -ms-transform: rotateX(0deg) translateY(0px) translateX(1px);
+    -o-transform: rotateX(0deg) translateY(0px) translateX(1px);
+    transform: rotateX(0deg) translateY(0px) translateX(1px);
+  }
+}
+
+.title {
+  white-space: pre-line;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  width: 420px;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+.card-wrapper {
+  position: relative; /* New wrapper for positioning context */
+  max-width: fit-content; /* Adjust width as necessary */
+  display: inline-block;
+  justify-content: center; /* Center the card within the wrapper */
+}
+
+.card {
+  position: relative;
+  z-index: 1; /* Ensure card is above the circles */
+  font-family: "Space Mono", monospace;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(35px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  overflow: hidden;
+  min-width: fit-content;
+}
+
+.logo {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  font-size: 20px;
+  padding-bottom: 30px;
+  opacity: 0.9;
+}
+
+input[id="card-number"] {
+  font-size: 30px;
+  height: 50px;
+}
+
+input[id="card-number"]::placeholder,
+input[id="card-name"]::placeholder,
+input[id="card-exp"]::placeholder,
+input[id="card-ccv"]::placeholder {
+  opacity: 0.5;
+}
+
+input[id="card-name"],
+input[id="card-exp"],
+input[id="card-ccv"] {
+  font-size: 16px;
+  height: 26px;
+}
+
+input[id="card-number"],
+input[id="card-name"],
+input[id="card-exp"],
+input[id="card-ccv"] {
+  border: none;
+  outline: none;
+  background: 0;
+  padding-left: 0;
+}
+
+input[id="card-number"]:focus,
+input[id="card-name"]:focus,
+input[id="card-exp"]:focus,
+input[id="card-ccv"]:focus {
+  --tw-ring-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.card-number {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.card-underline {
+  transition: all 0.3s;
+  display: inline-block;
+  bottom: 0;
+  left: -100%;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+}
+
+.card-number > input[id="card-number"]:hover + .card-underline,
+.card-number > input[id="card-number"]:focus + .card-underline,
+.card-name > input[id="card-name"]:hover + .card-underline,
+.card-name > input[id="card-name"]:focus + .card-underline,
+.expiration-date > input[id="card-exp"]:hover + .card-underline,
+.expiration-date > input[id="card-exp"]:focus + .card-underline,
+.ccv > input[id="card-ccv"]:hover + .card-underline,
+.ccv > input[id="card-ccv"]:focus + .card-underline {
+  left: 0;
+}
+
+.card-name {
+  margin-right: 40px;
+  width: 160px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.expiration-date {
+  margin-right: 60px;
+  width: 80px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.ccv {
+  width: 60px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.label {
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  pointer-events: none;
+  display: block;
+  padding-bottom: 2px;
+}

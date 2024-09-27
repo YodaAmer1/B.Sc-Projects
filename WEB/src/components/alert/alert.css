@@ -1,0 +1,19 @@
+.alert {
+  min-width: 200px;
+  text-align: left;
+  border-radius: 20px;
+  position: fixed; /* or 'absolute' */
+  top: 50%; /* Distance from the top of the viewport */
+  left: 50%; /* Center the alert horizontally */
+  transform: translateX(-50%) translateY(-50%); /* Adjust horizontal position to truly center */
+  z-index: 1000; /* Ensure it's above other content */
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for better visibility */
+}
+
+.alert button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

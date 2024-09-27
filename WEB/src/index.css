@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: max-content;
+}
+
+.dropdown {
+  position: relative; /* This makes the child's absolute positioning relative to this container */
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Positions the top of the dropdown menu right below the button */
+  left: 0; /* Aligns the dropdown menu to the left edge of the button */
+  z-index: 1000; /* Ensures the dropdown is on top of other content */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  min-width: 100%; /* Ensures the dropdown menu is at least as wide as the button */
+}
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type="checkbox"] {
+    --active: #4bc0c0;
+    --active-inner: #fff;
+    --focus: 2px rgba(75, 192, 192, 0.3);
+    --border: #bbc1e1;
+    --border-hover: #4bc0c0;
+    --background: #d3d3d3;
+    --disabled: #f6f8ff;
+    --disabled-inner: #e1e6f9;
+    color: #4bc0c0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition:
+      background 0.3s,
+      border-color 0.3s,
+      box-shadow 0.2s;
+    &:after {
+      content: "";
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition:
+        transform var(--d-t, 0.3s) var(--d-t-e, ease),
+        opacity var(--d-o, 0.2s);
+    }
+    &:checked {
+      --b: var(--active);
+      --bc: var(--active);
+      --d-o: 0.3s;
+      --d-t: 0.6s;
+      --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    }
+    &:disabled {
+      --b: var(--disabled);
+      cursor: not-allowed;
+      opacity: 0.9;
+      &:checked {
+        --b: var(--disabled-inner);
+        --bc: var(--border);
+      }
+      & + label {
+        cursor: not-allowed;
+      }
+    }
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          --bc: var(--border-hover);
+        }
+      }
+    }
+    &:focus {
+      box-shadow: 0 0 0 var(--focus);
+    }
+    &:not(.switch) {
+      width: 21px;
+      &:after {
+        opacity: var(--o, 0);
+      }
+      &:checked {
+        --o: 1;
+      }
+    }
+    & + label {
+      font-size: 14px;
+      line-height: 21px;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+  }
+  input[type="checkbox"] {
+    &:not(.switch) {
+      border-radius: 7px;
+      &:after {
+        width: 5px;
+        height: 9px;
+        border: 2px solid var(--active-inner);
+        border-top: 0;
+        border-left: 0;
+        left: 7px;
+        top: 4px;
+        transform: rotate(var(--r, 20deg));
+      }
+      &:checked {
+        --r: 43deg;
+      }
+    }
+    &.switch {
+      width: 38px;
+      border-radius: 11px;
+      &:after {
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: var(--ab, var(--border));
+        transform: translateX(var(--x, 0));
+      }
+      &:checked {
+        --ab: var(--active-inner);
+        --x: 17px;
+      }
+      &:disabled {
+        &:not(:checked) {
+          &:after {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}
+
+.loader {
+  border: 16px solid white; /* Light grey */
+  border-top: 16px solid #1a202c; /* Blue */
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  animation: spin 1s linear infinite;
+}
+
+.buttonLoader {
+  border: 4px solid white; /* Light grey */
+  border-top: 4px solid #1a202c; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom scrollbar for Firefox */
+.scrollable-content {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(55 65 81 / var(--tw-bg-opacity)) lightgray;
+}
+
+/* Custom scrollbar for Webkit (Chrome, Safari) */
+.scrollable-content::-webkit-scrollbar {
+  position: absolute;
+  width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  position: absolute;
+  background: lightgray;
+  border-radius: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  position: absolute;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.content {
+  /* margin-top: 72px; */
+  height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.canvas-background {
+  position: absolute;
+  padding-top: 72px;
+  top: 0;
+  left: 0;
+}
+
+@layer components {
+  .react-select-container .react-select__control,
+  .react-input {
+    @apply bg-white dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500;
+  }
+
+  .react-select-container .react-select__control--is-focused,
+  .react-input:focus {
+    @apply border-gray-500 hover:border-gray-500 dark:border-gray-400 dark:hover:border-gray-400 shadow-none;
+  }
+
+  .react-select-container .react-select__menu {
+    @apply bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600;
+  }
+
+  .react-select-container .react-select__option {
+    @apply text-gray-600 dark:text-gray-200 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-800;
+  }
+  /* .react-select-container .react-select__option--is-focused {
+      @apply bg-gray-200 dark:bg-gray-800;
+    } */
+
+  .react-select-container .react-select__indicator-separator {
+    @apply bg-gray-400;
+  }
+
+  .react-select-container .react-select__input-container,
+  .react-select-container .react-select__placeholder,
+  .react-select-container .react-select__single-value {
+    @apply text-gray-600 dark:text-gray-200;
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #333;
+  border-radius: 50%;
+  display: inline-block;
+  /* Animation */
+  animation: dotFlashing 1s infinite linear;
+}
+
+/* Define the keyframes for the animation */
+@keyframes dotFlashing {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Delay the animation for each dot */
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}

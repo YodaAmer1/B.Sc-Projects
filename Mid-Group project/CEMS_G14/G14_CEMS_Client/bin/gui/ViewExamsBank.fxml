@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentMainMenuController">
+   <children>
+      <StackPane layoutX="258.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #02030A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="pnlViewExamBank" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f5f5f5;">
+               <children>
+                  <Label layoutX="279.0" layoutY="24.0" text="View Exam" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="600.0" layoutY="520.0" prefHeight="80.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/IMG_0641.PNG" />
+                           </image>
+                        </ImageView>
+                        <Label text="CEMS" textFill="#6b4ad6">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="40.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView layoutX="116.0" layoutY="146.0" prefHeight="200.0" prefWidth="600.0">
+                    <columns>
+                      <TableColumn fx:id="btnNoQes" prefWidth="90.13339233398438" text="NO.Question " />
+                      <TableColumn fx:id="btnQes" prefWidth="60.26666259765625" text="Question " />
+                        <TableColumn fx:id="btnAnswer1" prefWidth="75.0" text="answer 1" />
+                        <TableColumn fx:id="btnAnswer2" prefWidth="75.0" text="answer 2" />
+                        <TableColumn fx:id="btnAnswer3" prefWidth="75.0" text="answer 3" />
+                        <TableColumn fx:id="btnAnswer4" prefWidth="75.0" text="answer 4" />
+                        <TableColumn fx:id="btnNoCorrectAnswer" prefWidth="104.0" text="correct answer" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlExamsBank" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="800.0" style="-fx-background-color: #fcfafa; -fx-border-color: #6b4d64;">
+               <children>
+                  <Label layoutX="223.0" layoutY="24.0" text="Exams Bank " textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="600.0" layoutY="520.0" prefHeight="80.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/IMG_0641.PNG" />
+                           </image>
+                        </ImageView>
+                        <Label text="CEMS" textFill="#6b4ad6">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="40.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="ExamsBankTableView" layoutX="158.0" layoutY="191.0" prefHeight="219.0" prefWidth="525.0">
+                    <columns>
+                      <TableColumn fx:id="ExamIdClm" prefWidth="100.0" text="Exam Id" />
+                      <TableColumn fx:id="CourseClm" prefWidth="100.0" text="Course" />
+                        <TableColumn fx:id="LectureClm" prefWidth="100.0" text="Lecture" />
+                        <TableColumn fx:id="SubjectClm" prefWidth="75.0" text="Subject" />
+                        <TableColumn fx:id="TimeClm" prefWidth="75.0" text="Time" />
+                        <TableColumn fx:id="QuestionsClm" prefWidth="75.0" text="#Questions" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <AnchorPane prefHeight="600.0" prefWidth="349.0" style="-fx-background-color: #6b4ad6;">
+         <children>
+            <Button fx:id="btnLogOut" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="65.0" layoutY="467.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" stylesheets="@style.css" text="Log Out" textFill="#6b4ad6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logout_64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnExit" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleExitButtonClicked" prefHeight="42.0" prefWidth="200.0" stylesheets="@style.css" text="Exit">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../G14_CEMS_Server/src/images/Exit_32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Label layoutX="193.0" layoutY="51.0" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="140.0" text="Lecture Name:" textFill="#eae3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></Label>
+            <Label layoutX="58.0" layoutY="100.0" text="Exam Id:" textFill="#eae3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></Label>
+            <Label layoutX="58.0" layoutY="180.0" text="Course:" textFill="#eae3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></Label>
+            <TextField fx:id="SearchExamIdBank" layoutX="128.0" layoutY="91.0" promptText="exam id" style="-fx-background-color: transper; -fx-border-color: #6b4ad6; -fx-border-radius: 20;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="SearchLectureName" layoutX="165.0" layoutY="131.0" promptText="lecture name" style="-fx-background-color: transper; -fx-border-color: #6b4ad6; -fx-border-radius: 20;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="SearchLectureName1" layoutX="121.0" layoutY="171.0" promptText="course" style="-fx-background-color: transper; -fx-border-color: #6b4ad6; -fx-border-radius: 20;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button layoutX="109.0" layoutY="249.0" mnemonicParsing="false" style="-fx-background-color: #fcfafa; -fx-border-color: #6b4ad6;" text="Search" textFill="#6b4ad6" />
+         </children>
+         <effect>
+            <DropShadow color="#6b4ad6" height="42.75" radius="22.6875" width="50.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

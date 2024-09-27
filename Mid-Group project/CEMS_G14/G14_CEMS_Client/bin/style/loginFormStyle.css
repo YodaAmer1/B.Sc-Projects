@@ -1,0 +1,48 @@
+#btnExit
+{
+	-fx-background-color : #6b4ad6;
+	-fx-text-fill : #e7e5e5;
+}
+#btnExit:hover{
+	-fx-background-color : #5833d1;
+	-fx-background-radius : 0 10 10 0;
+}
+#btnExit:pressed
+{
+	-fx-background-color : #4828af;
+	-fx-background-radius : 0 10 10 0;
+}
+
+#btnForgotpassword
+{
+	-fx-background-color : transparent;
+	-fx-text-fill : #a3a3a3;
+}
+#btnForgotpassword:hover{
+	-fx-background-color : transparent;
+	-fx-text-fill : #d5d5d5;
+}
+#btnForgotpassword:pressed
+{
+	-fx-background-color : transparent;
+	-fx-text-fill : #ffffff;
+}
+/*
+ * Login Button Style
+ */
+#btnLogin
+{
+	-fx-background-color : #f5f5f5;
+	-fx-background-radius: 20;
+	-fx-text-fill : #6b4ad6;
+}
+
+#btnLogin:hover{
+	-fx-background-color : #d5d5d5;
+	-fx-text-fill : #6b4ad6;
+}
+#btnLogin:pressed
+{
+	-fx-background-color : #a3a3a3;
+	-fx-text-fill : #6b4ad6;
+}

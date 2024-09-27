@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ExamBankFormController">
+   <children>
+      <Pane layoutX="350.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5;">
+         <children>
+            <Label layoutX="295.0" layoutY="14.0" text="Exams List" textFill="#6b4ad6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="600.0" layoutY="520.0" prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/IMG_0641.PNG" />
+                     </image>
+                  </ImageView>
+                  <Label text="CEMS" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <TableView fx:id="examsTableView" layoutX="50.0" layoutY="120.0" prefHeight="364.0" prefWidth="700.0">
+               <columns>
+                  <TableColumn fx:id="examIDColumn" prefWidth="79.0" text="ID" />
+                  <TableColumn fx:id="examSubjectColumn" prefWidth="117.0" text="Subject" />
+                  <TableColumn fx:id="examCourseColumn" prefWidth="110.0" text="Course" />
+                  <TableColumn fx:id="examTimeColumn" prefWidth="61.0" text="Time" />
+                  <TableColumn fx:id="examLecturerColumn" prefWidth="127.0" text="Lucturer" />
+                  <TableColumn fx:id="numOfQuestionColumn" prefWidth="108.0" text="# Questions" />
+               </columns>
+            </TableView>
+            <TextField fx:id="examSearch" layoutX="537.0" layoutY="76.0" prefHeight="35.0" prefWidth="213.0" promptText="Search" style="-fx-background-color: transparent; -fx-border-color: #6b4ad6; -fx-border-radius: 20; -fx-text-fill: #6b4ad6;">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="720.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Search_64.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnStartExam" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="22.0" layoutX="300.0" layoutY="509.0" mnemonicParsing="false" onAction="#handleStartExamButtonClicked" prefHeight="30.0" prefWidth="200.0" text="Start Exam" textFill="WHITESMOKE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/add_64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #6b4ad6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <DropShadow color="#6b4ad6" radius="17.25" width="50.0" />
+         </effect>
+         <children>
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="350.0">
+               <children>
+                  <ImageView fx:id="imageLogo" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/IMG_0643.PNG" />
+                     </image>
+                  </ImageView>
+                  <Label text="CEMS" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Line endX="350.0" layoutY="150.0" stroke="WHITESMOKE" strokeWidth="2.0" />
+            <Label alignment="CENTER" layoutX="20.0" layoutY="224.0" text="Subject Name:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="subjectNameComboBox" layoutX="150.0" layoutY="219.0" prefHeight="27.0" prefWidth="180.0" promptText="Select Subject Name" />
+            <Button fx:id="exitButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutY="550.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="42.0" prefWidth="200.0" text="Exit">
+               <graphic>
+                  <ImageView fx:id="imageExit" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../G14_CEMS_Server/src/images/Exit_32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="20.0" layoutY="290.0" text="Course Name:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="CourseNameComboBox" layoutX="150.0" layoutY="285.0" prefHeight="27.0" prefWidth="180.0" promptText="Select Course Name" />
+         </children>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LecturerExamReportViewController">
+   <children>
+      <Pane layoutX="20.0" layoutY="20.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f5f7fb;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="275.0" layoutY="25.0" text="Exam Report" textFill="#6b4ad6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="600.0" layoutY="520.0" prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/IMG_0641.PNG" />
+                     </image>
+                  </ImageView>
+                  <Label text="CEMS" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <BarChart fx:id="barChart" layoutX="75.0" layoutY="100.0" prefHeight="400.0" prefWidth="650.0" style="-fx-bar-fill: #6b4ad6;">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" tickLabelFill="#6b4ad6" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" tickLabelFill="#6b4ad6" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </Pane>
+      <AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #6b4ad6;">
+         <children>
+            <Line endX="350.0" endY="150.0" startY="150.0" stroke="WHITESMOKE" strokeWidth="2.0" />
+            <Button fx:id="btnExit" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleExitButtonClicked" prefHeight="42.0" prefWidth="200.0" stylesheets="@style.css" text="Exit">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../G14_CEMS_Server/src/images/Exit_32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Label layoutX="31.0" layoutY="210.0" text="Course:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="290.0" text="Average:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="250.0" text="Date:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="330.0" text="Highest Grade:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="370.0" text="Lowest Grade:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="410.0" text="Median:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="450.0" text="Number of Students:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="courseName" layoutX="116.0" layoutY="210.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="date" layoutX="91.0" layoutY="250.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="avarage" layoutX="126.0" layoutY="290.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="highestGrade" layoutX="185.0" layoutY="330.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lowestGrade" layoutX="180.0" layoutY="370.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="midGrade" layoutX="116.0" layoutY="410.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="numberOfStudents" layoutX="238.0" layoutY="450.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="170.0" text="Subject:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="subjectName" layoutX="116.0" layoutY="170.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="351.0">
+               <children>
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/IMG_0643.PNG" />
+                     </image>
+                  </ImageView>
+                  <Label text="CEMS" textFill="WHITESMOKE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="50.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="percentageFailLabel" layoutX="30.0" layoutY="490.0" text="Percentage Fail:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="percentageFail" layoutX="201.0" layoutY="490.0" text="Text" textFill="#e3e3e3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#6b4ad6" height="42.75" radius="22.6875" width="50.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViewStudentExamFormController">
+   <children>
+      <StackPane layoutX="258.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #02030A;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="questionsPane" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5;">
+               <children>
+                  <Label layoutX="260.0" layoutY="23.0" text="Question Number" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="66.0" text="Question:" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="questionTextLabel" layoutX="40.0" layoutY="96.0" prefWidth="700.0" text="Question Text" textFill="#6b4ad6" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="207.0" text="Please Choose The Right Answer:" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="answerACheckBox" layoutX="40.0" layoutY="241.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Answer 1" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="answerBCheckBox" layoutX="40.0" layoutY="291.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Answer 2" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="answerCCheckBox" layoutX="40.0" layoutY="341.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Answer 3" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="answerDCheckBox" layoutX="40.0" layoutY="391.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Answer 4" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Button fx:id="nextQuestionButton" alignment="CENTER" graphicTextGap="22.0" layoutX="610.0" layoutY="455.0" mnemonicParsing="false" onAction="#handleNextQuestionButtonClicked" prefHeight="23.0" prefWidth="160.0" style="-fx-background-color: #e0e0e0; -fx-background-radius: 20;" text="Next Question" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="previousQuestionButton" alignment="CENTER" graphicTextGap="22.0" layoutX="30.0" layoutY="455.0" mnemonicParsing="false" onAction="#handlePreviousQuestionButtonClicked" prefHeight="27.0" prefWidth="160.0" style="-fx-background-color: #e0e0e0; -fx-background-radius: 20;" text="Previous Question" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="questionNumberLabel" layoutX="523.0" layoutY="23.0" text="1" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="questionPointsLabel" layoutX="140.0" layoutY="68.0" text="Question Text" textFill="#6b4ad6" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="17.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imageAnswerLogo" fitHeight="25.0" fitWidth="25.0" layoutX="388.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Check_64.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="questionAnswerPointsLabel" layoutX="424.0" layoutY="207.0" style="-fx-text-fill: #00b92c;" text="(0 Points)" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </children>
+      </StackPane>
+      <AnchorPane layoutX="350.0" layoutY="500.0" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #e5e5e5;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="613.0" prefHeight="100.0" prefWidth="187.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/IMG_0641.PNG" />
+                     </image>
+                  </ImageView>
+                  <Label text="CEMS" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="35.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label layoutX="26.0" layoutY="39.0" text="Total Grade:" textFill="#6b4ad6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalGradeLabel" layoutX="154.0" layoutY="39.0" text="Text" textFill="#6b4ad6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="278.0" layoutY="39.0" text="Duration:" textFill="#6b4ad6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="durationLabel" layoutX="379.0" layoutY="39.0" text="Text" textFill="#6b4ad6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #6b4ad6;">
+         <children>
+            <Line endX="350.0" endY="150.0" startY="150.0" stroke="WHITESMOKE" strokeWidth="2.0" />
+            <Button fx:id="BackButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleExitButtonClicked" prefHeight="42.0" prefWidth="200.0" stylesheets="@style.css" text="Exit" AnchorPane.leftAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Button>
+            <GridPane fx:id="questionsGridPane" alignment="CENTER" layoutX="25.0" layoutY="170.0" prefHeight="170.0" prefWidth="300.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="1" textFill="#6b4ad6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="2" textFill="#6b4ad6" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="68.0" layoutY="23.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="3" textFill="#6b4ad6" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="120.0" layoutY="23.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="4" textFill="#6b4ad6" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="172.0" layoutY="23.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="5" textFill="#6b4ad6" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="224.0" layoutY="23.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="7" textFill="#6b4ad6" GridPane.columnIndex="6">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="276.0" layoutY="23.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="8" textFill="#6b4ad6" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="16.0" layoutY="89.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="9" textFill="#6b4ad6" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="68.0" layoutY="89.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="10" textFill="#6b4ad6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="120.0" layoutY="89.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="11" textFill="#6b4ad6" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="172.0" layoutY="89.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="12" textFill="#6b4ad6" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="224.0" layoutY="89.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="14" textFill="#6b4ad6" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="276.0" layoutY="89.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="15" textFill="#6b4ad6" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="16.0" layoutY="154.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="16" textFill="#6b4ad6" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="68.0" layoutY="154.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="17" textFill="#6b4ad6" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="120.0" layoutY="154.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="18" textFill="#6b4ad6" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="172.0" layoutY="154.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="19" textFill="#6b4ad6" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="224.0" layoutY="154.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="21" textFill="#6b4ad6" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="276.0" layoutY="154.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="22" textFill="#6b4ad6" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="16.0" layoutY="219.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="23" textFill="#6b4ad6" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="68.0" layoutY="219.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="24" textFill="#6b4ad6" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="120.0" layoutY="219.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="25" textFill="#6b4ad6" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="172.0" layoutY="219.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="26" textFill="#6b4ad6" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="224.0" layoutY="219.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="28" textFill="#6b4ad6" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="6" textFill="#6b4ad6" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="239.0" layoutY="16.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="13" textFill="#6b4ad6" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="239.0" layoutY="63.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="20" textFill="#6b4ad6" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="239.0" layoutY="110.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 5;" text="27" textFill="#6b4ad6" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <Label layoutX="85.0" layoutY="21.0" text="Exam Result" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="notesLabel" layoutX="25.0" layoutY="381.0" prefWidth="300.0" text="Notes for Student.." textFill="WHITESMOKE" wrapText="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="352.0" text="Notes:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="70.0" text="Exam ID:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="101.0" text="Lecturer:" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="examIDLabel" layoutX="127.0" layoutY="69.0" text="Text" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lecturerLabel" layoutX="134.0" layoutY="101.0" text="Text" textFill="WHITESMOKE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#6b4ad6" radius="17.25" width="50.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

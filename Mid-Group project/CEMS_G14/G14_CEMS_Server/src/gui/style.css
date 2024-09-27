@@ -1,0 +1,175 @@
+/*
+ * Start Button Style
+ */
+ 
+  .text-area {
+     -fx-font-family: Consolas;
+     -fx-font-size: 15;
+     -fx-text-fill: #ffffff;
+     -fx-display-caret:true;
+     -fx-background-color: transparent;
+ }
+
+ .text-area .content {
+     -fx-background-color: #000000;
+     -fx-background-radius: 7px;
+     -fx-border-radius: 7px;
+ }
+ 
+ .text-area .virtual-flow .scroll-bar:vertical,
+.text-area .virtual-flow .scroll-bar:vertical .track,
+.text-area .virtual-flow .scroll-bar:horizontal,
+.text-area .virtual-flow .scroll-bar:horizontal .track,
+.text-area .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.text-area .virtual-flow .scroll-bar:vertical .track-background{
+	-fx-background-color: transparent;
+}
+
+.text-area .virtual-flow .scroll-bar .increment-button,
+.text-area .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+.text-area.virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  #ffffff;
+}
+ 
+#btnStartServer
+{
+	-fx-background-color : #e7e5e5;
+	-fx-border-radius: 2em;
+	-fx-background-radius: 2em;
+	-fx-text-fill : #6b4ad6;
+}
+
+#btnStartServer:hover{
+	-fx-background-color : #5833d1;
+	-fx-text-fill : #e7e5e5;
+}
+#btnStartServer:pressed
+{
+	-fx-background-color : #4828af;
+	-fx-text-fill : #e7e5e5;
+}
+
+
+
+/*
+ * Exit Button Style
+ */
+#btnExit{
+	-fx-background-color : #6b4ad6;
+	-fx-text-fill : #e7e5e5;
+}
+#btnExit:hover{
+	-fx-background-color : #5833d1;
+}
+#btnExit:pressed{
+	-fx-background-color : #4828af;
+}
+
+/*
+ * open server log Button Style
+ * Clean Disconnected Clients List Button Style
+ */
+
+#btnImportUsersData,
+#btnServerLog,
+#btnCleanDisconecteds{
+	-fx-background-color : #6b4ad6;
+	-fx-border-radius: 2em;
+	-fx-background-radius: 2em;
+	-fx-text-fill : #e7e5e5;
+}
+
+#btnImportUsersData:hover,
+#btnServerLog:hover,
+#btnCleanDisconecteds:hover{
+	-fx-background-color : #5833d1;
+	-fx-text-fill : #e7e5e5;
+}
+#btnImportUsersData:pressed,
+#btnServerLog:pressed,
+#btnCleanDisconecteds:pressed{
+	-fx-background-color : #4828af;
+	-fx-text-fill : #e7e5e5;
+}
+
+
+/*
+ * Table View style
+ */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-background-radius: 7px 7px 7px 7px;
+    -fx-border-color: #6b4ad6;
+    -fx-border-radius: 7px;
+}
+.table-view .table-column {
+  -fx-alignment: CENTER;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: #a38fe5;
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 5px 0 5px 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-row-cell:hover {
+    -fx-background-color: #93f9b911;
+    -fx-text-background-color: red;
+}
+.table-row-cell:odd {
+    -fx-background-color: #d1c7f2;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell:even {
+    -fx-background-color: #beafed;
+    -fx-background-insets: 0, 1 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .track-background{
+	-fx-background-color: #a38fe5;
+	-fx-background-insets: 0 1 0 0;
+	-fx-background-radius: 0 0 7px 0px;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom, #beafed, #6b4ad6);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, #beafed, #6b4ad6);
+}
+.table-row-cell:highlighted {
+    -fx-background-color: #81c483;
+    -fx-background-radius: 15px;
+}
